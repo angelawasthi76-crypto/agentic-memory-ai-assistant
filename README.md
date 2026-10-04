@@ -23,41 +23,41 @@ Gemini  Memory Retrieval   Memory Write-back
 
 ## Features
 
-- Agentic chat loop using Google Gemini
-- Persistent memory across sessions
-- Semantic memory retrieval using vector embeddings
-- Milvus / Milvus Lite vector storage
-- User profile memory
-- Session and episodic memory
-- Rolling conversation summaries
-- Automatic memory extraction and write-back
-- Skill registry for operational/SRE-oriented tasks
-- FastAPI REST backend
-- React + Vite frontend
-- Memory Inspector showing retrieved memories and agent-loop steps
-- Session sidebar for managing conversations
-- Free-tier-oriented Gemini configuration
+* Agentic chat loop using Google Gemini
+* Persistent memory across sessions
+* Semantic memory retrieval using vector embeddings
+* Milvus / Milvus Lite vector storage
+* User profile memory
+* Session and episodic memory
+* Rolling conversation summaries
+* Automatic memory extraction and write-back
+* Skill registry for operational/SRE-oriented tasks
+* FastAPI REST backend
+* React + Vite frontend
+* Memory Inspector showing retrieved memories and agent-loop steps
+* Session sidebar for managing conversations
+* Free-tier-oriented Gemini configuration
 
 ## Tech Stack
 
 ### Backend
 
-- Python
-- FastAPI
-- Google Gemini API
-- `google-genai`
-- Milvus / Milvus Lite
-- PyMilvus
-- Gemini Embeddings
-- Pydantic
+* Python
+* FastAPI
+* Google Gemini API
+* `google-genai`
+* Milvus / Milvus Lite
+* PyMilvus
+* Gemini Embeddings
+* Pydantic
 
 ### Frontend
 
-- React
-- Vite
-- Tailwind CSS
-- JavaScript
-- REST API
+* React
+* Vite
+* Tailwind CSS
+* JavaScript
+* REST API
 
 ## Architecture
 
@@ -87,17 +87,17 @@ agentic-memory-ai-assistant/
 │   ├── main.py
 │   ├── requirements.txt
 │   ├── memory/
-│   │   ├── __init__.py
+│   │   ├── \_\_init\_\_.py
 │   │   ├── compression.py
-│   │   ├── session_store.py
+│   │   ├── session\_store.py
 │   │   ├── skills.py
-│   │   ├── user_profile.py
-│   │   └── vector_store.py
-│   └── skills_registry/
+│   │   ├── user\_profile.py
+│   │   └── vector\_store.py
+│   └── skills\_registry/
 │       ├── SKILLS.md
-│       ├── capacity_planning.md
-│       ├── incident_triage.md
-│       ├── monitoring_setup.md
+│       ├── capacity\_planning.md
+│       ├── incident\_triage.md
+│       ├── monitoring\_setup.md
 │       └── rollback.md
 │
 ├── frontend/
@@ -123,14 +123,14 @@ agentic-memory-ai-assistant/
 
 ## Getting Started
 
-### 1. Clone the repository
+### 1\. Clone the repository
 
 ```bash
 git clone https://github.com/anantpathak26100-cpu/agentic-memory-ai-assistant.git
 cd agentic-memory-ai-assistant
 ```
 
-### 2. Create a Python virtual environment
+### 2\. Create a Python virtual environment
 
 From the project root:
 
@@ -141,28 +141,28 @@ python -m venv venv
 Activate it:
 
 ```powershell
-.\venv\Scripts\Activate.ps1
+.\\venv\\Scripts\\Activate.ps1
 ```
 
-### 3. Install backend dependencies
+### 3\. Install backend dependencies
 
 ```powershell
 pip install -r backend/requirements.txt
 ```
 
-### 4. Configure the Gemini API key
+### 4\. Configure the Gemini API key
 
 Create a `.env` file in the project root:
 
 ```env
-GEMINI_API_KEY=your_gemini_api_key_here
+GEMINI\_API\_KEY=your\_gemini\_api\_key\_here
 ```
 
 Never commit the real `.env` file.
 
 The repository includes `.env.example` as a safe template.
 
-### 5. Start the backend
+### 5\. Start the backend
 
 From the project root:
 
@@ -188,7 +188,7 @@ Interactive API documentation:
 http://127.0.0.1:8000/docs
 ```
 
-### 6. Install frontend dependencies
+### 6\. Install frontend dependencies
 
 Open another terminal:
 
@@ -197,7 +197,7 @@ cd frontend
 npm install
 ```
 
-### 7. Start the frontend
+### 7\. Start the frontend
 
 ```powershell
 npm run dev
@@ -214,7 +214,7 @@ The Vite development server proxies API requests to the FastAPI backend on port 
 ## Environment Variables
 
 ```env
-GEMINI_API_KEY=your_gemini_api_key_here
+GEMINI\_API\_KEY=your\_gemini\_api\_key\_here
 ```
 
 The application uses Gemini for generation and `gemini-embedding-001` for embeddings. The generation model is configured in `backend/agent.py`.
@@ -232,7 +232,7 @@ Persistent user-level information can be maintained separately from individual c
 Example:
 
 ```text
-Name: Anant
+Name: Angel
 Study: CSE
 ```
 
@@ -253,7 +253,7 @@ After generating a response, the agent can extract useful information from the c
 A user can tell the assistant:
 
 ```text
-My name is Anant and I am a CSE student.
+My name is Angel and I am a CSE student.
 ```
 
 The agent can store this information.
@@ -271,14 +271,14 @@ The assistant can retrieve the relevant memory and answer using persisted inform
 The UI can expose internal processing information such as:
 
 ```text
-stored_user_message
-retrieved_memories
-loaded_user_profile
-no_skills_matched
-assembled_prompt
-llm_response_generated
-updated_user_profile
-rolling_summary_generated
+stored\_user\_message
+retrieved\_memories
+loaded\_user\_profile
+no\_skills\_matched
+assembled\_prompt
+llm\_response\_generated
+updated\_user\_profile
+rolling\_summary\_generated
 ```
 
 This makes the project demonstrate an agentic workflow rather than only a basic chat interface.
@@ -287,10 +287,10 @@ This makes the project demonstrate an agentic workflow rather than only a basic 
 
 The backend contains a skill registry for operational use cases including:
 
-- Capacity planning
-- Incident triage
-- Monitoring setup
-- Rollback
+* Capacity planning
+* Incident triage
+* Monitoring setup
+* Rollback
 
 ## Security
 
@@ -299,12 +299,12 @@ The repository ignores secrets and local runtime data such as:
 ```text
 .env
 venv/
-node_modules/
-__pycache__/
+node\_modules/
+\_\_pycache\_\_/
 data/
-*.db
-*.sqlite
-*.sqlite3
+\*.db
+\*.sqlite
+\*.sqlite3
 ```
 
 If an API key is accidentally committed to a public repository, rotate the key immediately.
@@ -315,45 +315,46 @@ Add screenshots of the working application here.
 
 Suggested screenshots:
 
-- Main chat interface
-- Memory Inspector showing retrieved memories
-- Session sidebar
-- Cross-session memory retrieval
+* Main chat interface
+* Memory Inspector showing retrieved memories
+* Session sidebar
+* Cross-session memory retrieval
 
 ## Future Improvements
 
-- Memory importance scoring
-- Memory deduplication and lifecycle management
-- More skills and tool calling
-- Authentication and multi-user support
-- Streaming responses
-- Production vector database deployment
-- Automated tests
-- Docker deployment
-- GitHub Actions CI/CD
-- Structured agent tracing and observability
+* Memory importance scoring
+* Memory deduplication and lifecycle management
+* More skills and tool calling
+* Authentication and multi-user support
+* Streaming responses
+* Production vector database deployment
+* Automated tests
+* Docker deployment
+* GitHub Actions CI/CD
+* Structured agent tracing and observability
 
 ## Why This Project
 
 This project demonstrates practical concepts used in modern AI applications:
 
-- LLM application development
-- Agentic workflows
-- Long-term memory
-- Vector databases
-- Semantic search
-- REST API development
-- Full-stack integration
-- React frontend development
-- Context management
-- AI system debugging and observability
+* LLM application development
+* Agentic workflows
+* Long-term memory
+* Vector databases
+* Semantic search
+* REST API development
+* Full-stack integration
+* React frontend development
+* Context management
+* AI system debugging and observability
 
 ## Author
 
-**Anant Pathak**
+**Angel Awasthi**
 
-GitHub: https://github.com/anantpathak26100-cpu
+GitHub:https://github.com/angelawasthi76-crypto
 
----
+\---
 
 Built as a full-stack demonstration of an AI assistant with persistent, semantic memory.
+
