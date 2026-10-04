@@ -87,17 +87,17 @@ agentic-memory-ai-assistant/
 │   ├── main.py
 │   ├── requirements.txt
 │   ├── memory/
-│   │   ├── \_\_init\_\_.py
+│   │   ├── \\\_\\\_init\\\_\\\_.py
 │   │   ├── compression.py
-│   │   ├── session\_store.py
+│   │   ├── session\\\_store.py
 │   │   ├── skills.py
-│   │   ├── user\_profile.py
-│   │   └── vector\_store.py
-│   └── skills\_registry/
+│   │   ├── user\\\_profile.py
+│   │   └── vector\\\_store.py
+│   └── skills\\\_registry/
 │       ├── SKILLS.md
-│       ├── capacity\_planning.md
-│       ├── incident\_triage.md
-│       ├── monitoring\_setup.md
+│       ├── capacity\\\_planning.md
+│       ├── incident\\\_triage.md
+│       ├── monitoring\\\_setup.md
 │       └── rollback.md
 │
 ├── frontend/
@@ -141,7 +141,7 @@ python -m venv venv
 Activate it:
 
 ```powershell
-.\\venv\\Scripts\\Activate.ps1
+.\\\\venv\\\\Scripts\\\\Activate.ps1
 ```
 
 ### 3\. Install backend dependencies
@@ -155,7 +155,7 @@ pip install -r backend/requirements.txt
 Create a `.env` file in the project root:
 
 ```env
-GEMINI\_API\_KEY=your\_gemini\_api\_key\_here
+GEMINI\\\_API\\\_KEY=your\\\_gemini\\\_api\\\_key\\\_here
 ```
 
 Never commit the real `.env` file.
@@ -214,7 +214,7 @@ The Vite development server proxies API requests to the FastAPI backend on port 
 ## Environment Variables
 
 ```env
-GEMINI\_API\_KEY=your\_gemini\_api\_key\_here
+GEMINI\\\_API\\\_KEY=your\\\_gemini\\\_api\\\_key\\\_here
 ```
 
 The application uses Gemini for generation and `gemini-embedding-001` for embeddings. The generation model is configured in `backend/agent.py`.
@@ -271,14 +271,14 @@ The assistant can retrieve the relevant memory and answer using persisted inform
 The UI can expose internal processing information such as:
 
 ```text
-stored\_user\_message
-retrieved\_memories
-loaded\_user\_profile
-no\_skills\_matched
-assembled\_prompt
-llm\_response\_generated
-updated\_user\_profile
-rolling\_summary\_generated
+stored\\\_user\\\_message
+retrieved\\\_memories
+loaded\\\_user\\\_profile
+no\\\_skills\\\_matched
+assembled\\\_prompt
+llm\\\_response\\\_generated
+updated\\\_user\\\_profile
+rolling\\\_summary\\\_generated
 ```
 
 This makes the project demonstrate an agentic workflow rather than only a basic chat interface.
@@ -299,12 +299,12 @@ The repository ignores secrets and local runtime data such as:
 ```text
 .env
 venv/
-node\_modules/
-\_\_pycache\_\_/
+node\\\_modules/
+\\\_\\\_pycache\\\_\\\_/
 data/
-\*.db
-\*.sqlite
-\*.sqlite3
+\\\*.db
+\\\*.sqlite
+\\\*.sqlite3
 ```
 
 If an API key is accidentally committed to a public repository, rotate the key immediately.
