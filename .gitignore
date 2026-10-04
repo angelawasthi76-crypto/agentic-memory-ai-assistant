@@ -1,0 +1,30 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Local databases / generated data
+*.db
+*.sqlite
+*.sqlite3
+
+# Milvus / local data
+data/
+*.log
+
+data/
